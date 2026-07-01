@@ -1,46 +1,157 @@
-* {
+** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Pixelify Sans", sans-serif;
     background-color: #feefe5;
 }
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Pixelify Sans', sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
 #birthdayText {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #333;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
 }
-
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 500px;
-}
-.cake-container {
-    padding-right: 500px;
-}
-.cake {
-  position: relative;
-  animation: cake 1s infinite;
-  -webkit-animation: cake 1s infinite;
-  -moz-animation: cake 1s infinite;
+    width: 100%;
+    max-width: 1200px;
 
-  -o-animation: cake 1s infinite;
-  transform: scale(8.5);
-    z-index: 1; /* optional */
-  overflow: visible; /* allow candles to "escape" */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.cake-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+.cake {
+    position: relative;
+
+    animation: cake 1s infinite;
+    -webkit-animation: cake 1s infinite;
+    -moz-animation: cake 1s infinite;
+    -o-animation: cake 1s infinite;
+
+    transform-origin: center center;
+    transform: scale(8);
+
+    z-index: 1;
+    overflow: visible;
+}
+
+/* ---------------- Desktop ---------------- */
+
+@media screen and (min-width:1200px) {
+    .cake {
+        transform: scale(8.5);
+    }
+}
+
+/* ---------------- Laptop ---------------- */
+
+@media screen and (max-width:1199px) {
+    .cake {
+        transform: scale(7);
+    }
+}
+
+/* ---------------- Tablet ---------------- */
+
+@media screen and (max-width:992px) {
+
+    body {
+        padding: 30px 20px;
+    }
+
+    .cake {
+        transform: scale(5.8);
+    }
+
+    #birthdayText {
+        margin-bottom: 25px;
+    }
+
+}
+
+/* ---------------- Mobile ---------------- */
+
+@media screen and (max-width:768px) {
+
+    body {
+        align-items: flex-start;
+        padding: 30px 15px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .cake {
+        transform: scale(3.8);
+    }
+
+    #mainTitle {
+        font-size: 2rem !important;
+    }
+
+    #subTitle {
+        font-size: 1rem !important;
+        line-height: 1.6;
+        padding: 0 10px;
+    }
+
+    button {
+        width: 85%;
+        max-width: 280px;
+        font-size: 16px !important;
+        padding: 12px !important;
+    }
+
+}
+
+/* ---------------- Small Phones ---------------- */
+
+@media screen and (max-width:480px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .cake {
+        transform: scale(3);
+    }
+
+    #mainTitle {
+        font-size: 1.7rem !important;
+    }
+
+    #subTitle {
+        font-size: 0.9rem !important;
+    }
 
 }
 
